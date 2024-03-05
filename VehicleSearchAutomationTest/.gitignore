@@ -1,0 +1,24 @@
+﻿bin/
+tmp/
+target/
+
+# Build results
+
+[Dd]ebug/
+[Rr]elease/
+x64/
+build/
+[Bb]in/
+[Oo]bj/
+
+# MSTest test Results
+[Tt]est[Rr]esult*/
+[Bb]uild[Ll]og.*
+
+# Tooling
+_ReSharper*/
+*.resharper
+[Tt]est[Rr]esult*
+
+.config
+.csproj
