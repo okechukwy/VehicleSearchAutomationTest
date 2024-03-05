@@ -7,6 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CsvHelper" Version="31.0.2" />
     <PackageReference Include="DotNetSeleniumExtras.PageObjects" Version="3.11.0" />
     <PackageReference Include="DotNetSeleniumExtras.WaitHelpers" Version="3.11.0" />
     <PackageReference Include="ExcelDataReader" Version="3.6.0" />
@@ -26,7 +27,6 @@
 
   <ItemGroup>
     <Folder Include="Drivers\" />
-    <Folder Include="Features\WeBuyAnyCar\" />
     <Folder Include="Support\" />
   </ItemGroup>
 

@@ -1,10 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ExcelDataReader;
-using LINQtoCSV;
+﻿using LINQtoCSV;
+using CsvContext = LINQtoCSV.CsvContext;
 
 namespace VehicleSearchAutomationTest.ExcelReader
 {
@@ -20,7 +15,7 @@ namespace VehicleSearchAutomationTest.ExcelReader
         [CsvColumn(Name = "MODEL", FieldIndex = 3)]
         public string Model { get => Model; set => Model = value; }
 
-
+       
         //Reading csv file
         public string? ReadCsvFile()
         {
@@ -36,11 +31,6 @@ namespace VehicleSearchAutomationTest.ExcelReader
             var csvReader = csvContext.Read<CarValuation>("car_input_v1.csv", csvFileDescription);
             
             return csvReader.ToString();
-/*
-            foreach(var row in csvReader)
-            {
-               Console.WriteLine(row.Registration, row.Make, row.Model);
-            }*/
 
         }
 
@@ -63,45 +53,7 @@ namespace VehicleSearchAutomationTest.ExcelReader
         }
 
 
-        /* private static IDictionary<string, IExcelDataReader> _cache;
-         private static FileStream stream;
-         private static IExcelDataReader reader;
-
-         *//* public static string ExcelReaderHelper()
-          {
-              _cache = new Dictionary<string, IExcelDataReader>();
-
-          }*//*
-
-         private static IExcelDataReader GetExcelReader(string xlPath, string sheetName)
-         {
-             if (_cache.ContainsKey(sheetName))
-             {
-                 reader = _cache[sheetName];
-             }
-             else
-             {
-                 stream = new FileStream(xlPath, FileMode.Open, FileAccess.Read);
-                 reader = ExcelReaderFactory.CreateOpenXmlReader(stream);
-                 _cache.Add(sheetName, reader);
-             }
-             return reader;
-         }
-
-         *//* public static int GetTotalRows(string xlPath, string sheetName)
-          {
-              IExcelDataReader _reader = GetExcelReader(xlPath, sheetName);
-              return _reader.AsDataSet().Tables[sheetName].Rows.Count;
-          }
-
-          public static object GetCellData(string xlPath, string sheetName, int row, int column)
-          {
-
-              IExcelDataReader _reader = GetExcelReader(xlPath, sheetName);
-              DataTable table = _reader.AsDataSet().Tables[sheetName];
-              return table.Rows[row][column];
-          }*//*
-
+        
          private static object GetData(Type type, object data)
          {
              switch (type.Name)
@@ -115,6 +67,13 @@ namespace VehicleSearchAutomationTest.ExcelReader
                  default:
                      return data.ToString();
              }
-         }*/
+         }
+    }
+
+    public class Cars
+    {
+        public string Registration { get; set; }
+        public string Make { get; set; }
+        public string Model { get; set; }
     }
 }

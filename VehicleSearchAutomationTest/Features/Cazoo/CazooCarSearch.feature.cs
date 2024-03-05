@@ -117,10 +117,10 @@ this.FeatureBackground();
 #line 13
  testRunner.When(string.Format("I input a car with the \"{0}\" in the serach field", rEGISTRATION), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "When ");
 #line hidden
-#line 15
+#line 14
  testRunner.And("I serach for the details", ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "And ");
 #line hidden
-#line 16
+#line 15
  testRunner.Then(string.Format("I will see a car with the following details \"{0}\", \"{1}\" and \"{2}\"", rEGISTRATION, mAKE, mODEL), ((string)(null)), ((TechTalk.SpecFlow.Table)(null)), "Then ");
 #line hidden
             }

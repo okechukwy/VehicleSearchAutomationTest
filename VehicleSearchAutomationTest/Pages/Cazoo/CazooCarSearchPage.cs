@@ -5,12 +5,14 @@ using System.Text;
 using System.Threading.Tasks;
 using OpenQA.Selenium;
 using SeleniumExtras.PageObjects;
+using VehicleSearchAutomationTest.ComponentHelper;
 using VehicleSearchAutomationTest.ExcelReader;
 
 namespace VehicleSearchAutomationTest.Pages
 {
     public class CazooCarSearchPage : BasePage
     {
+        private TextBoxHelper textBoxHelper;
         private IWebDriver driver;
         private CarValuation carValuation;
         public static By AllCookies = By.XPath("//span[contains(text(),'Accept All')]");
